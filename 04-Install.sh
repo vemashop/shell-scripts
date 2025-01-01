@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
   exit 1 #1 represents failure
 else
   echo "You have permissions to run this script"
-  read -p "Enter the package name to install" PACKAGENAME #PACKAGENAME is a variable
+  read -p "Enter the package name to install: " PACKAGENAME #PACKAGENAME is a variable
   echo "Checking is this package already exits or not"
   command -v $PACKAGENAME 1>/dev/null 2&>1
   if [ $? -eq 0 ]; then
