@@ -14,7 +14,9 @@ else
    exit 18 #18 represents success
   else
     echo "$PACKAGENAME not exists"
+    sleep 1
     echo "Installing $PACKAGENAME"
+    sleep 1
     dnf install $PACKAGENAME -y 1>/dev/null 2>/dev/null
     if [ $? -eq 0 ]; then
      echo "$PACKAGENAME is installed successfully"
