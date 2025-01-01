@@ -13,7 +13,7 @@ else
    echo "$PACKAGENAME is exists"
    exit 18 #18 represents success
   else
-    dnf install $PACKAGENAME -y 1>/dev/null 2&>1
+    dnf install $PACKAGENAME -y 1>/dev/null 2>/dev/null
     if [ $? -eq 0 ]; then
      echo "$PACKAGENAME is installed successfully"
      exit 19  #19 represents success
