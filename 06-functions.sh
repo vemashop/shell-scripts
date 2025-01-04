@@ -29,7 +29,7 @@ then # not installed
     functionqm $? "Installing MySQL" 
     
 else
-    echo "MySQL is already ... INSTALLED"
+    echo "MySQL is already ... $Y INSTALLED $N"
 fi
 
 
@@ -41,7 +41,7 @@ then
     dnf install git -y &> /dev/null
     functionqm $? "Installing Git"
 else
-    echo "Git is already ... INSTALLED"
+    echo "Git is already ... $Y INSTALLED $N"
 fi
 
 
