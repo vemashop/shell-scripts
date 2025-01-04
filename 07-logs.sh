@@ -4,10 +4,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 USERID=$(id -u)
-LOG_FOLDER="/var/log/shellscripts-logs/"
-LOG_FILE=$(echo $0 | cut -d "." -f1)
-TIME_STAMP=$(date +%D-%H:%M:%S) #date prints as (month/day/year)-hour:minute:second
-LOG_FILENAME="$LOG_FOLDER/$LOG_FILE-$TIME_STAMP.log"
+LOGS_FOLDER="/var/log/shellscripts-logs"
+LOG_FILE=$(echo $0 | cut -d "." -f1 )
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 USERNAME=$USER
 
 functionqm(){
