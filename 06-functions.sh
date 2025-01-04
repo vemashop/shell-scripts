@@ -45,3 +45,4 @@ else
 fi
 
 
+echo " $G done $N "
