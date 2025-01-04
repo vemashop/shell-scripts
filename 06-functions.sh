@@ -1,6 +1,6 @@
 #!/bin/bash
 R="\e[31m"
-G="\e[32m"
+G=\e[32m
 Y="\e[33m"
 N="\e[0m"
 USERID=$(id -u)
@@ -29,7 +29,7 @@ then # not installed
     functionqm $? "Installing MySQL" 
     
 else
-    echo "MySQL is already ... $Y INSTALLED $N"
+    echo -e "MySQL is already ... $Y INSTALLED $N"
 fi
 
 
@@ -41,8 +41,8 @@ then
     dnf install git -y &> /dev/null
     functionqm $? "Installing Git"
 else
-    echo "Git is already ... $Y INSTALLED $N"
+    echo -e "Git is already ... $Y INSTALLED $N"
 fi
 
 
-echo " $G done $N "
+echo -e " $G done $N "
