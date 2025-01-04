@@ -18,11 +18,11 @@ then
     exit 1 #other than 0
 fi
 
-dnf list installed mysql
+dnf list installed mysql &> /dev/null
 
 if [ $? -ne 0 ]
 then # not installed
-    dnf install mysql -y
+    dnf install mysql -y &> /dev/null
     functionqm $? "Installing MySQL" 
     
 else
@@ -31,11 +31,11 @@ fi
 
 
 
-dnf list installed git
+dnf list installed git &> /dev/null
 
 if [ $? -ne 0 ]
 then
-    dnf install git -y
+    dnf install git -y &> /dev/null
     functionqm $? "Installing Git"
 else
     echo "Git is already ... INSTALLED"
