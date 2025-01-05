@@ -27,28 +27,13 @@ then
     exit 1 #other than 0
 fi
 
-dnf list installed mysql &>> $LOG_FILE_NAME
-
-if [ $? -ne 0 ]
-then # not installed
-    dnf install mysql -y &>> $LOG_FILE_NAME
-    functionqm $? "Installing MySQL" 
-    
-else
-    echo -e "MySQL is already ... $Y INSTALLED $N"
-fi
-
-
-
-dnf list installed git &>> $LOG_FILE_NAME
-
-if [ $? -ne 0 ]
-then
-    dnf install git -y &>> $LOG_FILE_NAME
-    functionqm $? "Installing Git"
-else
-    echo -e "Git is already ... $Y INSTALLED $N"
-fi
-
-
-echo -e " $G done $N "
+for package in $@
+do
+    dnf list installed $package &>> $LOG_FILE_NAME
+    if [ $? -ne 0 ]; then # not installed
+    dnf install $package -y &>> $LOG_FILE_NAME
+    functionqm $? "Installing $package" 
+    else
+    echo -e "$package is already ... $Y INSTALLED $N"
+    fi    
+done    
