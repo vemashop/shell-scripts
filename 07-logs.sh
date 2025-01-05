@@ -32,6 +32,12 @@ then
     exit 1 #other than 0
 fi
 
+ArgumentsPassed=$#
+
+if ! [ $# -ge 1 ]; then
+ echo "Please pass arguments"
+fi 
+
 for package in $@
 do
     dnf list installed $package &>> $LOG_FILE_NAME
