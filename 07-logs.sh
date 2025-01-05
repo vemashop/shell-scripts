@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# This Script is use full to validate a package is installed or not and also install if not installed
+
+# This contains colors, function, logs and for loop.
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
