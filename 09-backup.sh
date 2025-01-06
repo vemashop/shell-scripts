@@ -35,7 +35,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
 
 if [ $? -ne 0 ]; then
-       echo "Unable to delete $FILES"
+       echo "No files identified: $FILES"
        exit 2
 fi
 
