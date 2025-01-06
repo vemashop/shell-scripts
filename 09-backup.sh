@@ -4,8 +4,8 @@ SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14}
 R="\e[31m"
-G="\e[32m0"
-Y="\e[33m0"
+G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 if [ $# -lt 2 ]; then
