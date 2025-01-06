@@ -54,7 +54,7 @@ if [ -n $FILES ]; then
     fi    
   fi
 else
- echo "$R ERROR $N Failed to create zip file" 
+ echo -e "$R ERROR $N Failed to create zip file" 
  exit 3
 fi 
 
