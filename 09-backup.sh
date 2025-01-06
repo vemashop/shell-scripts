@@ -12,6 +12,8 @@ TIMESTAMP=$(date +%d/%m/%Y-%H:%M:%S)
 FILE=$(echo $0 | cut -d "." -f1)
 LOG_FILE_NAME=$LOGS_FOLDER/$FILE-$TIMESTAMP.log
 
+echo "Script started by $USER" &>> $LOG_FILE_NAME
+
 if [ $# -lt 2 ]; then
  echo -e "$Y USAGE $N--> <SOURCE-DIR> <DESTINATION-DIR> <DAY(Optional)"
  exit 1
@@ -26,6 +28,8 @@ fi
 if ! [ -d $SDESTINATION_DIR ]; then
   echo "$SDESTINATION_DIR either not a directory or does not exists"
 fi 
+
+
 
 
 
