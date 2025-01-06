@@ -34,6 +34,11 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
 
+if [ $? -ne 0 ]; then
+       echo "Unable to delete $FILES"
+       exit 2
+fi
+
 if [ -n $FILES ]; then
  echo "The files are: $FILES"
  ZIP_FILE="$SDESTINATION_DIR/app-logs-$TIMESTAMP.zip"
@@ -50,12 +55,12 @@ if [ -n $FILES ]; then
 
     if [ $? -ne 0 ]; then
        echo "Unable to delete $FILES"
-       exit 2
+       exit 3
     fi    
   fi
 else
  echo -e "$R ERROR $N Failed to create zip file" 
- exit 3
+ exit 4
 fi 
 
 
