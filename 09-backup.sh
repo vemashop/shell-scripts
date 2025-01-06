@@ -7,10 +7,11 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-LOGS_FOLDER=/home/vemasaikumar/saishellscripts-logs
-TIMESTAMP=$(date +%d/%m/%Y-%H:%M:%S)
-FILE=$(echo $0 | cut -d "." -f1 )
-LOG_FILE_NAME="$LOGS_FOLDER/$FILE-$TIMESTAMP.log"
+
+LOGS_FOLDER="/home/vemasaikumar/saishellscripts-logs"
+LOG_FILE=$(echo $0 | awk -F "/" '{print $NF}' | cut -d "." -f1 )
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 mkdir -p /home/vemasaikumar/saishellscripts-logs
 
