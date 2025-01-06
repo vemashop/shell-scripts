@@ -9,7 +9,7 @@ Y="\e[33m0"
 N="\e[0m"
 
 if [ $# -lt 2 ]; then
- echo "$Y USAGE $N--> <SOURCE-DIR> <DESTINATION-DIR> <DAY(Optional)"
+ echo -e "$Y USAGE $N--> <SOURCE-DIR> <DESTINATION-DIR> <DAY(Optional)"
  exit 1
 fi  
 
