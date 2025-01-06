@@ -32,7 +32,26 @@ if ! [ -d $SDESTINATION_DIR ]; then
   echo "$SDESTINATION_DIR either not a directory or does not exists"
 fi 
 
+FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
 
+if [ -n $FILES ]; then
+ echo "The files are: $FILES"
+ ZIP_FILE="$SDESTINATION_DIR/app-logs-$TIMESTAMP.zip"
+ $FILES | zip -@ $ZIP_FILE
+  if [ -f $ZIP_FILE ]
+   then 
+    echo "Successfully created zip file for files older than $DAYS"
+    while read -r failname 
+    do
+    echo "deleting file: $failname"
+    rm -rf $failname
+    echo "deleted: $failname"
+    done <<< $FILES
+  fi
+else
+ echo "$R ERROR $N --> Failed to create zip file" 
+ exit 2
+fi 
 
 
 
