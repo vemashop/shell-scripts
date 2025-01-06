@@ -37,8 +37,8 @@ FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
 if [ -n $FILES ]; then
  echo "The files are: $FILES"
  ZIP_FILE="$SDESTINATION_DIR/app-logs-$TIMESTAMP.zip"
- find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ $ZIP_FILES
-  if [ -f $ZIP_FILES ]
+ find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ $ZIP_FILE
+  if [ -f $ZIP_FILE ]
    then 
     echo "Successfully created zip file for files older than $DAYS"
     while read -r failname 
