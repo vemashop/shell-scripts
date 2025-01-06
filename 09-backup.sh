@@ -12,6 +12,8 @@ TIMESTAMP=$(date +%d/%m/%Y-%H:%M:%S)
 FILE=$(echo $0 | cut -d "." -f1)
 LOG_FILE_NAME=$LOGS_FOLDER/$FILE-$TIMESTAMP.log
 
+mkdir -p shellscripts 
+
 echo "Script started by $USER" &>> $LOG_FILE_NAME
 
 if [ $# -lt 2 ]; then
@@ -19,7 +21,7 @@ if [ $# -lt 2 ]; then
  exit 1
 fi  
 
-mkdir -p shellscripts 
+
 
 if ! [ -d $SOURCE_DIR ]; then
   echo "$SOURCE_DIR either not a directory or does not exists"
