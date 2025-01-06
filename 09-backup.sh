@@ -47,10 +47,15 @@ if [ -n $FILES ]; then
       rm -rf $failname
       echo "deleted: $failname"
     done <<< $FILES
+
+    if [ $? -ne 0 ]; then
+       echo "Unable to delete $FILES"
+       exit 2
+    fi    
   fi
 else
  echo "$R ERROR $N Failed to create zip file" 
- exit 2
+ exit 3
 fi 
 
 
