@@ -34,10 +34,6 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
 
-if [ $? -ne 0 ]; then
-       echo "No files identified: $FILES"
-       exit 2
-fi
 
 if [ -n "$FILES" ]; then
  echo "The files are: $FILES"
@@ -59,7 +55,7 @@ if [ -n "$FILES" ]; then
     fi    
   fi
 else
- echo -e "$R ERROR $N Failed to create zip file" 
+ echo -e "$R ERROR $N Failed to create zip file, no files" 
  exit 4
 fi 
 
