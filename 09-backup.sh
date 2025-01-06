@@ -7,14 +7,14 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-LOGS_FOLDER=/home/vemasaikumar/saishellscripts-logs/
+LOGS_FOLDER=/home/vemasaikumar/saishellscripts-logs
 TIMESTAMP=$(date +%d/%m/%Y-%H:%M:%S)
 FILE=$(echo $0)
 LOG_FILE_NAME="$LOGS_FOLDER/$FILE-$TIMESTAMP.log"
 
 mkdir -p /home/vemasaikumar/saishellscripts-logs
 
-echo "Script started" &>> $LOG_FILE_NAME
+echo "Script started" &>>$LOG_FILE_NAME
 
 if [ $# -lt 2 ]; then
  echo -e "$Y USAGE $N--> <SOURCE-DIR> <DESTINATION-DIR> <DAY(Optional)"
