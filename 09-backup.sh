@@ -41,7 +41,7 @@ fi
 
 if [ -n "$FILES" ]; then
  echo "The files are: $FILES"
- ZIP_FILE="$SDESTINATION_DIR/app-logs-$TIMESTAMP.zip"
+ ZIP_FILE="$SDESTINATION_DIR-$TIMESTAMP.zip"
  find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ $ZIP_FILE
   if [ -f $ZIP_FILE ]
    then 
