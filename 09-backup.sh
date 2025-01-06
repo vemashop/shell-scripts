@@ -49,7 +49,7 @@ if [ -n $FILES ]; then
     done <<< $FILES
   fi
 else
- echo "$R ERROR $N --> Failed to create zip file" 
+ echo "$R ERROR $N Failed to create zip file" 
  exit 2
 fi 
 
