@@ -14,7 +14,7 @@ LOG_FILE_NAME="$LOGS_FOLDER/$FILE-$TIMESTAMP.log"
 
 mkdir -p /home/vemasaikumar/saishellscripts-logs
 
-echo "Script started" &>>$LOG_FILE_NAME
+echo -e "Script started" &>>$LOG_FILE_NAME
 
 if [ $# -lt 2 ]; then
  echo -e "$Y USAGE $N--> <SOURCE-DIR> <DESTINATION-DIR> <DAY(Optional)"
