@@ -39,7 +39,7 @@ if [ $? -ne 0 ]; then
        exit 2
 fi
 
-if [ -n $FILES ]; then
+if [ -n "$FILES" ]; then
  echo "The files are: $FILES"
  ZIP_FILE="$SDESTINATION_DIR/app-logs-$TIMESTAMP.zip"
  find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ $ZIP_FILE
