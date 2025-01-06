@@ -28,8 +28,8 @@ if ! [ -d $SOURCE_DIR ]; then
   echo "$SOURCE_DIR either not a directory or does not exists"
 fi   
 
-if ! [ -d $SDESTINATION_DIR ]; then
-  echo "$SDESTINATION_DIR either not a directory or does not exists"
+if ! [ -d $DESTINATION_DIR ]; then
+  echo "$DESTINATION_DIR either not a directory or does not exists"
 fi 
 
 FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
@@ -41,7 +41,7 @@ fi
 
 if [ -n "$FILES" ]; then
  echo "The files are: $FILES"
- ZIP_FILE="$SDESTINATION_DIR/zipped-files-$TIMESTAMP.zip"
+ ZIP_FILE="$DESTINATION_DIR/zipped-files-$TIMESTAMP.zip"
  find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ "$ZIP_FILE"
   if [ -f $ZIP_FILE ]
    then 
