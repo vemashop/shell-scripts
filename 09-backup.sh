@@ -7,12 +7,12 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-LOGS_FOLDER=/home/$USER/saishellscripts-logs/
+LOGS_FOLDER=/home/vemasaikumar/saishellscripts-logs/
 TIMESTAMP=$(date +%d/%m/%Y-%H:%M:%S)
 FILE=$(echo $0 | cut -d "." -f1)
 LOG_FILE_NAME="$LOGS_FOLDER/$FILE-$TIMESTAMP.log"
 
-mkdir -p /home/$USER/saishellscripts-logs
+mkdir -p /home/vemasaikumar/saishellscripts-logs
 
 echo "Script started by $USER" &>> $LOG_FILE_NAME
 
