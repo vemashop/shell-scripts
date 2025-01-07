@@ -8,12 +8,12 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="/home/vemasaikumar/saishellscripts-logs"
+LOGS_FOLDER="/home/ec2-user/saishellscripts-logs"
 LOG_FILE=$(echo $0 | awk -F "/" '{print $NF}' | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
-mkdir -p /home/vemasaikumar/saishellscripts-logs
+mkdir -p /home/ec2-user/saishellscripts-logs
 
 echo -e "Script started by $USER" | tee -a $LOG_FILE_NAME
 
@@ -32,13 +32,13 @@ if ! [ -d $DESTINATION_DIR ]; then
   echo "$DESTINATION_DIR either not a directory or does not exists"
 fi 
 
-FILES=$(find $SOURCE_DIR -name "*.logs" -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 
 if [ -n "$FILES" ]; then
  echo "The files are: $FILES"
  ZIP_FILE="$DESTINATION_DIR/zipped-files-$TIMESTAMP.zip"
- find $SOURCE_DIR -name "*.logs" -mtime +$DAYS | zip -@ $ZIP_FILE
+ find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ $ZIP_FILE
   if [ -f $ZIP_FILE ]
    then 
     echo "Successfully created zip file for files older than $DAYS"
