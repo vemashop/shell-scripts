@@ -4,5 +4,5 @@ USAGE=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
 PARTITION=$(df -hT | grep xfs | awk -F " " '{print $NF}')
 
-echo "$USAGE" && echo "$PARTITION"
+echo -e "$USAGE" && echo -e "$PARTITION" /n
 
