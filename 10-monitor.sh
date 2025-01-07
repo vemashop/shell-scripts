@@ -11,6 +11,7 @@ do
   if [ $USAGE -ge $DISK_THRESHOULD ]
   then
    echo "USAGE:$USAGE , PARTITION:$PARTITION"
+   fi
 done <<<$DISK_USAGE
 
 
