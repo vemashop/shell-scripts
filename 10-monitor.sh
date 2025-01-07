@@ -10,7 +10,7 @@ do
   
   if [ $USAGE -ge $DISK_THRESHOULD ]
   then
-   MESSAGE=$(echo "USAGE:$USAGE , PARTITION:$PARTITION")
+   MESSAGE+=$(echo "USAGE:$USAGE , PARTITION:$PARTITION")
    fi
 done <<<$DISK_USAGE
 
