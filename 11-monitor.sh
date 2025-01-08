@@ -11,7 +11,7 @@ do
   USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
   if [ $USAGE -ge $DISK_THRESHOULD ]; then
-      MSG=$(echo "Partition:$PARTITION and USAGE:$USAGE")
+      MSG+=$(echo "Partition:$PARTITION and USAGE:$USAGE")
   fi    
 done <<< $DISK_USAGE 
 
