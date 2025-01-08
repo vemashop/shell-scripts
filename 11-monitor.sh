@@ -8,7 +8,8 @@ USAGE=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
 while read -r line
 do
-echo "Partition: $PARTITION and USAGE:$USAGE"
+echo $line
+#echo "Partition: $PARTITION and USAGE:$USAGE"
 done <<< $DISK_USAGE 
 
    
