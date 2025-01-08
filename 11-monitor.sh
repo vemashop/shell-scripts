@@ -13,8 +13,9 @@ do
   if [ $USAGE -ge $DISK_THRESHOULD ]; then
       MSG=$(echo "Partition:$PARTITION and USAGE:$USAGE")
   fi    
- echo "Message:$MSG" | mutt -s "High Disk Usage Observed" vemasaikumar328@gmail.com  
 done <<< $DISK_USAGE 
+
+echo "Message:$MSG" | mutt -s "High Disk Usage Observed" vemasaikumar328@gmail.com  
 
 
 
