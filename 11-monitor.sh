@@ -9,13 +9,14 @@ while read -r line
 do
   PARTITION=$(echo $line | awk -F " " '{print $NF}')
   USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-#   echo "Partition:$PARTITION and USAGE:$USAGE"
-  if [ $USAGE -ge $DISK_THRESHOULD ]; then
-      echo "Partition:$PARTITION and USAGE:$USAGE"
-  fi    
-     
 
+  if [ $USAGE -ge $DISK_THRESHOULD ]; then
+      MSG=$(echo "Partition:$PARTITION and USAGE:$USAGE")
+  fi    
+ echo "Message:$MSG" | mutt -s "High Disk Usage Observed" vemasaikumar328@gmail.com  
 done <<< $DISK_USAGE 
+
+
 
    
 
