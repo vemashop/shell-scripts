@@ -11,7 +11,7 @@ do
   USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 #   echo "Partition:$PARTITION and USAGE:$USAGE"
   if [ $USAGE -ge $DISK_THRESHOULD ]; then
-      echo "Partition:$PARTITION and USAGE:$USAGE
+      echo "Partition:$PARTITION and USAGE:$USAGE"
   fi    
      
 
